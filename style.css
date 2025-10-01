@@ -32,25 +32,30 @@ img {
 }
 
 label {
-    margin-top: 15px;
+    font-size: 1.15em;
     font-weight: bold;
-    color: #006400;
+    margin-bottom: 6px;
+    display: block;
 }
 
-input, select {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #1976d2;
-    border-radius: 5px;
+input, select, textarea {
+    font-size: 1.08em;
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
     background: linear-gradient(to right, #1976d2, #64b5f6);
     color: white;
-    padding: 10px 20px;
+    padding: 16px 32px;
+    font-size: 1.15em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    min-width: 160px;
+    margin-bottom: 10px;
 }
 
 button:hover {
@@ -87,8 +92,10 @@ a:hover {
 }
 
 footer {
-    background: linear-gradient(to bottom, #008000, #ffffff);
-    color: #333;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 10px rgba(25, 118, 210, 0.10);
+    background: linear-gradient(to right, #1976d2, #bbdefb);
+    color: #222;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -365,8 +372,10 @@ form textarea {
 
 /* Footer responsivo */
 footer {
-    background: linear-gradient(to bottom, #008000, #ffffff);
-    color: #333;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 10px rgba(25, 118, 210, 0.10);
+    background: linear-gradient(to right, #1976d2, #bbdefb);
+    color: #222;
     padding: 30px 20px;
     font-family: Arial, sans-serif;
     font-size: 14px;

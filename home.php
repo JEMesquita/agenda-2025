@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit;
@@ -64,15 +66,13 @@ if (!isset($_SESSION['usuario_id'])) {
             <a href="add_advogado.php" class="menu-item">⚖️ Advogados</a>
             <a href="add_pessoal.php" class="menu-item">👤 Contatos Pessoais</a>
             <a href="add_cgd.php" class="menu-item">🏛️ CGD</a>
-            <aref href="add_bombeiros.php" class="menu-item">🚒 Corpo de Bombeiros</a>
+            <a href="add_bombeiros.php" class="menu-item">🚒 Corpo de Bombeiros</a>
             <a href="add_detran.php" class="menu-item">🚗 DETRAN</a>
             <a href="add_forum.php" class="menu-item">🏛️ Fórum</a>
             <a href="add_pcce.php" class="menu-item">🕵️‍♂️ PCCE</a>
             <a href="add_pmce.php" class="menu-item">👮‍♂️ PMCE</a>
             <a href="add_pefoce.php" class="menu-item">🔍 PEFOCE</a>
-            <a href="add_sap.php" class="menu-item">🔒 SAP</a>
-            
-            
+            <a href="add_sap.php" class="menu-item">🔒 SAP</a>      
             <a href="add_outras.php" class="menu-item">🏢 Outras Instituições</a>
             <a href="add_juizado.php" class="menu-item">⚖️ Juizados Especiais</a>
             
@@ -112,12 +112,14 @@ if (!isset($_SESSION['usuario_id'])) {
 
 </html>
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['usuario_id']) || $_SESSION['perfil'] != 'Administrador') {
     header("Location: login.php");
     exit;
 }
-require 'db.php';
+require 'config.php';
 // Buscar usuários
 $stmt = $pdo->query("SELECT * FROM usuarios");
 $usuarios = $stmt->fetchAll();
