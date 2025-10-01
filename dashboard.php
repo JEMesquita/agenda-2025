@@ -7,7 +7,8 @@ if (!isset($_SESSION['usuario_id'])) {
 
 include 'config.php';
 
-$stmt = $pdo->query("SELECT * FROM varas ORDER BY nome_vara ASC");
+// Corrige campo para nome
+$stmt = $pdo->query("SELECT * FROM varas ORDER BY nome ASC");
 $varas = $stmt->fetchAll();
 ?>
 

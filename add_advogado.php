@@ -34,7 +34,7 @@ if ($_POST) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastrar Advogado - Agenda</title>
+    <title>Cadastrar Advogado - Agenda 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -67,7 +67,7 @@ if ($_POST) {
             <label>Endereço:</label>
             <textarea name="endereco" rows="3"></textarea>
 
-            <button type="submit">💾 Salvar Advogado</button>
+            <button type="submit">💾 Salvar</button>
         </form>
     </div>
 </body>
