@@ -53,7 +53,7 @@ if ($_POST) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Adicionar Contatos - Agenda TJCE</title>
+    <title>Adicionar Contatos - TJCE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>

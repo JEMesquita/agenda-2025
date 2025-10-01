@@ -62,7 +62,7 @@ if ($_POST && isset($_FILES['arquivo'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Importar Varas - Agenda CGD</title>
+    <title>Importar Varas - Agenda </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>

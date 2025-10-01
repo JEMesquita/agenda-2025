@@ -17,13 +17,13 @@ $varas = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda CGD - Dashboard</title>
+    <title>Agenda - Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h2>Agenda do TJCE - Bem-vindo, <?= $_SESSION['usuario_nome'] ?> (<?= $_SESSION['perfil'] ?>)</h2>
+        <h2>Agenda 2025 - Bem-vindo, <?= $_SESSION['usuario_nome'] ?> (<?= $_SESSION['perfil'] ?>)</h2>
         <p>
             <a href="add_agenda.php">➕ Adicionar Novo Contato</a> |
             <a href="export_agenda.php" target="_blank">📄 Exportar como .TXT</a> |
@@ -32,7 +32,7 @@ $varas = $stmt->fetchAll();
         </p>
 
         <div style="margin: 20px 0;">
-            <label for="searchVara">🔍 Localizar Comarca ou Vara:</label>
+            <label for="searchVara">🔍 Localizar Contato:</label>
             <input type="text" id="searchVara" placeholder="Digite parte do nome, contato ou e-mail..." style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;">
         </div>
 
@@ -99,34 +99,29 @@ $varas = $stmt->fetchAll();
             });
         });
     </script>
-    <footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
-        <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
-            <!-- Informações de Contato -->
-            <div style="flex: 1; min-width:250px;">
-                <h3>Endereço</h3>
-                <p>Sede da Controladoria Geral de Disciplina
-                    dos Órgãos de Segurança Pública e Sistema Penitenciário
-                    Av. Pessoa Anta, 69 - Centro - Fortaleza, CE
-                    Tel.:(85) 98419-7410</p>
-            </div>
-            <!-- Horário de Atendimento -->
-            <div style="flex:1; min-width:250px;">
-                <h3>Horário de Atendimento</h3>
-                <p>Segunda a Sexta: 08h - 18h
-                    Sábado e Domingo: Fechado</p>
-            </div>
-            <!-- Nossos Canais -->
-            <!-- Nossos Canais -->
-            <div style="flex:1; min-width:250px;">
-                <h3>Desenvimento e Manutenções</h3>
-                <p><a href="mailto:contato@cgd.ce.gov.br">esmerinomesquita@gmail.com.br</a></p>
-                <p><a href="https://github.com/JEMesquita/joao.mesquita.github.io" target="_blank">Site Oficial</a></p>
-                <!-- Adicione mais links se necessário -->
-                <p style="margin-top:30px; font-size:14px;">&copy; 2025 - Todos os direitos reservados.</p>
-            </div>
-
+<footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
+  <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
+        <!-- Informações de Contato -->
+        <div style="flex: 1; min-width:250px;"> 
+            <h3>Contato</h3>
+                <p>Telefone.:(85) 99661-3303</p>
+        </div>        
+        <!-- Horário de Atendimento -->
+        <div style="flex:1; min-width:250px;">
+             <h3>Horário de Atendimento</h3>
+             <p>Segunda a Sexta: 08h - 18h
+             Sábado e Domingo: Fechado</p>
         </div>
-    </footer>
+        <!-- Nossos Canais -->
+        <!-- Nossos Canais -->
+        <div style="flex:1; min-width:250px;">
+            <h3>Desenvimento e Manutenções</h3>
+            <p><a href="mailto:contato@gmail.com">esmerinomesquita@gmail.com.br</a></p>
+            <p><a href="https://github.com/JEMesquita/joao.mesquita.github.io" target="_blank">Site Oficial</a></p>
+            <!-- Adicione mais links se necessário -->
+             <p style="margin-top:30px; font-size:14px;">&copy; João Mesquita 2025 - Todos os direitos reservados.</p>
+        </div>
+</footer>
 </body>
 
 </html>

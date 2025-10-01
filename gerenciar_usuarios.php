@@ -20,7 +20,7 @@ $usuarios = $stmt->fetchAll();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gerenciar Usuários - Agenda CGD</title>
+    <title>Gerenciar Usuários - Agenda 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
