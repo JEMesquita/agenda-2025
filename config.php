@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'agenda_cgd';
+$db   = 'agenda_2025'; // Corrigido para novo nome do banco
 $user = 'root';     // altere se necessário
 $pass = '';         // altere se necessário
 $charset = 'utf8mb4';

@@ -58,20 +58,25 @@ if (!isset($_SESSION['usuario_id'])) {
 <body>
     <div class="container">
         <h2 class="welcome">Bem-vindo(a), <?= htmlspecialchars($_SESSION['usuario_nome']) ?>!</h2>
-        <p style="text-align: center; margin-bottom: 30px;">Selecione o tipo de contato que deseja gerenciar:</p>
+        <p style="text-align: center; margin-bottom: 30px;">Selecione a Instituição para acessar os contatos que deseja gerenciar:</p>
 
         <div class="menu-container">
-            <a href="add_pmce.php" class="menu-item">👮‍♂️ PMCE</a>
-            <a href="add_pcce.php" class="menu-item">🕵️‍♂️ PCCE</a>
-            <a href="add_pefoce.php" class="menu-item">🔍 PEFOCE</a>
-            <a href="add_sap.php" class="menu-item">🔒 SAP</a>
-            <a href="add_cgd.php" class="menu-item">🏛️ CGD</a>
-            <a href="add_detran.php" class="menu-item">🚗 DETRAN</a>
-            <a href="add_outras.php" class="menu-item">🏢 Outras Instituições</a>
-            <a href="add_juizado.php" class="menu-item">⚖️ Juizados Especiais</a>
-            <a href="add_forum.php" class="menu-item">🏛️ Fórum</a>
             <a href="add_advogado.php" class="menu-item">⚖️ Advogados</a>
             <a href="add_pessoal.php" class="menu-item">👤 Contatos Pessoais</a>
+            <a href="add_cgd.php" class="menu-item">🏛️ CGD</a>
+            <aref href="add_bombeiros.php" class="menu-item">🚒 Corpo de Bombeiros</a>
+            <a href="add_detran.php" class="menu-item">🚗 DETRAN</a>
+            <a href="add_forum.php" class="menu-item">🏛️ Fórum</a>
+            <a href="add_pcce.php" class="menu-item">🕵️‍♂️ PCCE</a>
+            <a href="add_pmce.php" class="menu-item">👮‍♂️ PMCE</a>
+            <a href="add_pefoce.php" class="menu-item">🔍 PEFOCE</a>
+            <a href="add_sap.php" class="menu-item">🔒 SAP</a>
+            
+            
+            <a href="add_outras.php" class="menu-item">🏢 Outras Instituições</a>
+            <a href="add_juizado.php" class="menu-item">⚖️ Juizados Especiais</a>
+            
+            
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -81,27 +86,28 @@ if (!isset($_SESSION['usuario_id'])) {
     </div>
 
     <footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
-  <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
-        <!-- Informações de Contato -->
-        <div style="flex: 1; min-width:250px;"> 
-            <h3>Contato</h3>
+        <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
+            <!-- Nossos Canais -->
+            <div style="flex:1; min-width:250px;">
+                <h3>Desenvimento e Manutenções</h3>
+                <p><a href="mailto:contato@gmail.com">esmerinomesquita@gmail.com.br</a></p>
+                <p><a href="https://github.com/JEMesquita/joao.mesquita.github.io" target="_blank">Site Oficial</a></p>
+                <!-- Adicione mais links se necessário -->
+            </div>
+            <!-- Horário de Atendimento -->
+            <div style="flex:1; min-width:250px;">
+                <h3>Horário de Atendimento</h3>
+                <p>Segunda a Sexta: 08h - 18h
+                    Sábado e Domingo: Fechado</p>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div style="flex: 1; min-width:250px;">
+                <h3>Contato</h3>
                 <p>Telefone.:(85) 99661-3303</p>
-        </div>        
-        <!-- Horário de Atendimento -->
-        <div style="flex:1; min-width:250px;">
-             <h3>Horário de Atendimento</h3>
-             <p>Segunda a Sexta: 08h - 18h
-             Sábado e Domingo: Fechado</p>
-        </div>
-        <!-- Nossos Canais -->
-        <div style="flex:1; min-width:250px;">
-            <h3>Desenvimento e Manutenções</h3>
-            <p><a href="mailto:contato@gmail.com">esmerinomesquita@gmail.com.br</a></p>
-            <p><a href="https://github.com/JEMesquita/joao.mesquita.github.io" target="_blank">Site Oficial</a></p>
-            <!-- Adicione mais links se necessário -->
-        </div>
-        <p style="margin-top:30px; font-size:14px;">&copy; João Mesquita 2025 - Todos os direitos reservados.</p>
-</footer>
+            </div>
+            <p style="margin-top:30px; font-size:14px;">&copy; João Mesquita 2025 - Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>

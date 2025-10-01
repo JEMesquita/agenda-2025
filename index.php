@@ -35,7 +35,7 @@ if (isset($_SESSION['usuario_id'])) {
 </head>
 <body>
     <div class="splash">
-        <img src="logo.png" alt="Governo do Estado do Ceará">
+        <img src="logo.png" alt="Agenda 2025">
         <p>Carregando Agenda...</p>
         <meta http-equiv="refresh" content="3;url=login.php">
     </div>

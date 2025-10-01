@@ -26,6 +26,7 @@ if (!$vara) {
 */
 
 if ($_POST) {
+    $instituicao = trim($_POST['instituicao']);
     $nome = trim($_POST['nome_vara']);
     $contato = trim($_POST['contato']);
     $email = trim($_POST['email']);
@@ -37,15 +38,14 @@ if ($_POST) {
         /*echo "<p style='color:red;'>❌ O nome da vara é obrigatório.</p>";*/
     } else {
         try {
-            $sql = "INSERT INTO varas (nome_vara, contato, email, endereco, link_balcao) VALUES (?, ?, ?, ?, ?)";
-            /*$sql = "UPDATE varas SET nome_vara = ?, contato = ?, email = ?, endereco = ?, link_balcao = ? WHERE id = ?";*/
+            $sql = "INSERT INTO varas (instituicao, nome_vara, contato, email, endereco, link_balcao) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$nome, $contato, $email, $endereco, $link, $id]);
-            echo "<p style='color:green;'>✅ Vara atualizada com sucesso!</p>";
+            $stmt->execute([$instituicao, $nome, $contato, $email, $endereco, $link]);
+            echo "<p style='color:green;'>✅ Contato incluído com sucesso!</p>";
             echo "<script>setTimeout(() => { window.parent.location.reload(); }, 1500);</script>";
             exit;
         } catch (Exception $e) {
-            echo "<p style='color:red;'>❌ Erro ao atualizar: " . htmlspecialchars($e->getMessage()) . "</p>";
+            echo "<p style='color:red;'>❌ Erro ao incluir: " . htmlspecialchars($e->getMessage()) . "</p>";
         }
     }
 }
@@ -74,8 +74,17 @@ if ($_POST) {
         <?php endif; ?>
         <form method="POST">
     <div>
+    <label>Instituição:</label>
+    <select name="instituicao" required style="width:100%; padding:8px; margin:5px 0;">
+        <option value="TJCE">TJCE</option>
+        <option value="MPCE">MPCE</option>
+        <option value="Defensoria">Defensoria</option>
+        <option value="OAB">OAB</option>
+        <option value="Outros">Outros</option>
+    </select>
+
     <label>Nome da Comarca ou Vara:</label>
-    <input type="text" name="nome_vara" required value="<?= htmlspecialchars($vara['nome_vara']) ?>" style="width:100%; padding:8px; margin:5px 0;">
+    <input type="text" name="nome_vara" required value="<?= htmlspecialchars($vara['nome_vara'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
 
     <label>Contato:</label>
     <textarea name="contato" rows="3" style="width:100%; padding:8px; margin:5px 0; resize: vertical;"><?= htmlspecialchars($vara['contato'] ?? '') ?></textarea>

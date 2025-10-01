@@ -1,3 +1,29 @@
+# 🟩 AGENDA 2025
+
+## Mudanças e Implementações Recentes
+
+### Banco de Dados
+- Nome do banco alterado para `agenda_2025`.
+- Inclusão das tabelas: `advogados`, `cgd`, `contato_pessoais`, `detran`, `forum`, `pcce`, `pmce`, `pefoce`, `sap`, `juizados` (corrigido de kuizados), `mpce`, `outras_instituicoes`.
+- Tabela `varas` agora possui campo `instituicao`.
+
+### Backend/PHP
+- Criação de páginas para cadastro e listagem de cada instituição na pasta `instituicoes`.
+- Padronização dos formulários, tratamento de erros e mensagens de sucesso.
+- Listagem dos registros exibe todos os campos relevantes.
+- Adicionado campo de seleção de instituição em formulários.
+- Correção do nome da página e tabela de `kuizados` para `juizados`.
+
+### Navegação
+- Links de retorno para a página inicial em todas as páginas de cadastro/listagem.
+- Sugestão de integração das páginas ao menu principal.
+
+### Observações
+- Todas as alterações visam facilitar o cadastro, consulta e organização dos contatos por instituição.
+- Estrutura pronta para expansão e integração futura.
+
+---
+
 ┌──────────────────────────────────────────────────────────────────────┐
 │                  🟩 AGENDA 2025                        │
 │         Sistema de Gestão de Contatos         │
