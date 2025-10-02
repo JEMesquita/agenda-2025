@@ -48,7 +48,7 @@ if ($_POST) {
     }
     ?>
     </ul>
-    <a href="home.php">Voltar ao início</a>
+    <p><a href="home.php">⬅ Voltar</a></p>
 </div>
 </body>
 </html>

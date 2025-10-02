@@ -29,7 +29,7 @@ function confirmDelete(id, nome) {
     const confirmBtn = document.getElementById('confirm-btn');
 
     message.innerHTML = `Tem certeza que deseja excluir a vara <strong>${nome}</strong>? Esta ação não pode ser desfeita.`;
-    confirmBtn.onclick = function() {
+    confirmBtn.onclick = function () {
         fetch(`delete_agenda.php?id=${id}`)
             .then(() => {
                 location.reload(); // recarrega a página após exclusão
@@ -42,4 +42,25 @@ function confirmDelete(id, nome) {
 
 function closeConfirmModal() {
     document.getElementById('confirm-modal').style.display = 'none';
+}
+
+ body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify - content: center;
+    align - items: center;
+    height: 100vh;
+    background: linear - gradient(to bottom, #008000, #ffffff);
+}
+        .splash {
+    text - align: center;
+}
+        .splash img {
+    width: 500px;
+    margin - bottom: 30px;
+}
+        .splash p {
+    font - size: 18px;
+    color: #333;
 }

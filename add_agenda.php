@@ -52,10 +52,12 @@ if ($_POST) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Adicionar Contatos - TJCE</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h2>➕ Adicionar Novo Contato</h2>
@@ -73,36 +75,38 @@ if ($_POST) {
             </div>
         <?php endif; ?>
         <form method="POST">
-    <div>
-    <label>Instituição:</label>
-    <select name="instituicao" required style="width:100%; padding:8px; margin:5px 0;">
-        <option value="TJCE">TJCE</option>
-        <option value="MPCE">MPCE</option>
-        <option value="Defensoria">Defensoria</option>
-        <option value="OAB">OAB</option>
-        <option value="Outros">Outros</option>
-    </select>
+            <div>
+                <label>Instituição:</label>
+                <select name="instituicao" required style="width:100%; padding:8px; margin:5px 0;">
+                    <option value="TJCE">TJCE</option>
+                    <option value="MPCE">MPCE</option>
+                    <option value="Defensoria">Defensoria</option>
+                    <option value="OAB">OAB</option>
+                    <option value="Outros">Outros</option>
+                </select>
 
-    <label>Nome da Comarca ou Vara:</label>
-    <input type="text" name="nome_vara" required value="<?= htmlspecialchars($vara['nome_vara'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
+                <label>Nome da Comarca ou Vara:</label>
+                <input type="text" name="nome_vara" required value="<?= htmlspecialchars($vara['nome_vara'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
 
-    <label>Contato:</label>
-    <textarea name="contato" rows="3" style="width:100%; padding:8px; margin:5px 0; resize: vertical;"><?= htmlspecialchars($vara['contato'] ?? '') ?></textarea>
+                <label>Contato:</label>
+                <textarea name="contato" rows="3" style="width:100%; padding:8px; margin:5px 0; resize: vertical;"><?= htmlspecialchars($vara['contato'] ?? '') ?></textarea>
 
-    <label>Email:</label>
-    <input type="email" name="email" value="<?= htmlspecialchars($vara['email'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
+                <label>Email:</label>
+                <input type="email" name="email" value="<?= htmlspecialchars($vara['email'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
 
-    <label>Endereço:</label>
-    <textarea name="endereco" rows="3" style="width:100%; padding:8px; margin:5px 0; resize: vertical;"><?= htmlspecialchars($vara['endereco'] ?? '') ?></textarea>
+                <label>Endereço:</label>
+                <textarea name="endereco" rows="3" style="width:100%; padding:8px; margin:5px 0; resize: vertical;"><?= htmlspecialchars($vara['endereco'] ?? '') ?></textarea>
 
-    <label>Link do Balcão Virtual:</label>
-    <input type="url" name="link_balcao" value="<?= htmlspecialchars($vara['link_balcao'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
+                <label>Link do Balcão Virtual:</label>
+                <input type="url" name="link_balcao" value="<?= htmlspecialchars($vara['link_balcao'] ?? '') ?>" style="width:100%; padding:8px; margin:5px 0;">
 
-    <div style="text-align: right; margin-top: 20px;">
-        <button type="button" onclick="window.parent.closeModal()" style="background: #666; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">Cancelar</button>
-        <button type="submit" style="background: #008000; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">💾 Salvar Alterações</button>
+                <div style="text-align: right; margin-top: 20px;">
+                    <button type="button" onclick="window.parent.closeModal()" style="background: #666; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">Cancelar</button>
+                    <button type="submit" style="background: #008000; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">💾 Salvar Alterações</button>
+                </div>
+        </form>
+        <p><a href="home.php">⬅ Voltar</a></p>
     </div>
-</form>
-</div>
 </body>
+
 </html>

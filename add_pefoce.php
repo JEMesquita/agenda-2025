@@ -16,6 +16,36 @@ if ($_POST) {
         $erro = 'Erro ao cadastrar: ' . htmlspecialchars($e->getMessage());
     }
 }
+
+// Função de exclusão
+if (isset($_GET['delete'])) {
+    $id = (int)$_GET['delete'];
+    $stmt = $pdo->prepare('DELETE FROM pefoce WHERE id = ?');
+    $stmt->execute([$id]);
+    header('Location: add_pefoce.php');
+    exit;
+}
+
+// Função de edição
+if (isset($_GET['edit'])) {
+    $id = (int)$_GET['edit'];
+    $stmt = $pdo->prepare('SELECT * FROM pefoce WHERE id = ?');
+    $stmt->execute([$id]);
+    $editRow = $stmt->fetch();
+}
+
+if (isset($_POST['update'])) {
+    $id = (int)$_POST['id'];
+    $sigla = trim($_POST['sigla']);
+    $local = trim($_POST['local']);
+    $email = trim($_POST['email']);
+    $contato = trim($_POST['contato']);
+    $endereco = trim($_POST['endereco']);
+    $stmt = $pdo->prepare('UPDATE pefoce SET sigla = ?, local = ?, email = ?, contato = ?, endereco = ? WHERE id = ?');
+    $stmt->execute([$sigla, $local, $email, $contato, $endereco, $id]);
+    header('Location: add_pefoce.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,18 +55,38 @@ if ($_POST) {
 </head>
 <body>
 <div class="container">
-    <h2>Cadastrar PEFOCE</h2>
+    <h2>Cadastrar Contato da Perícia Forense da Estado do CearáPEFOCE</h2>
+    <?php if (isset($editRow)): ?>
     <form method="POST">
-        <label>Nome:</label>
-        <input name="nome" required>
-        <label>Setor:</label>
-        <input name="setor">
+        <input type="hidden" name="id" value="<?= $editRow['id'] ?>">
+        <label>Sigla:</label>
+        <input name="sigla" required value="<?= htmlspecialchars($editRow['sigla']) ?>">
+        <label>Local:</label>
+        <input name="local" value="<?= htmlspecialchars($editRow['local']) ?>">
+        <label>Email:</label>
+        <input name="email" value="<?= htmlspecialchars($editRow['email']) ?>">
         <label>Contato:</label>
-        <input name="contato">
+        <input name="contato" value="<?= htmlspecialchars($editRow['contato']) ?>">
+        <label>Endereço:</label>
+        <input name="endereco" value="<?= htmlspecialchars($editRow['endereco']) ?>">
+        <button type="submit" name="update">Atualizar</button>
+        <a href="add_pefoce.php">Cancelar</a>
+    </form>
+    <?php else: ?>
+    <form method="POST">
+        <label>Sigla:</label>
+        <input name="sigla" required>
+        <label>Local:</label>
+        <input name="local">
         <label>Email:</label>
         <input name="email">
+        <label>Contato:</label>
+        <input name="contato">
+        <label>Endereço:</label>
+        <input name="endereco">
         <button type="submit">Salvar</button>
     </form>
+    <?php endif; ?>
     <?php if ($erro) echo '<div style="color:red">'.$erro.'</div>'; ?>
     <?php if ($sucesso) echo '<div style="color:green">'.$sucesso.'</div>'; ?>
     <hr>
@@ -44,11 +94,14 @@ if ($_POST) {
     <ul>
     <?php
     foreach ($pdo->query('SELECT * FROM pefoce') as $row) {
-        echo '<li>' . htmlspecialchars($row['nome']) . ' | ' . htmlspecialchars($row['setor']) . ' | ' . htmlspecialchars($row['contato']) . ' | ' . htmlspecialchars($row['email']) . '</li>';
+        echo '<li>' . htmlspecialchars($row['sigla']) . ' | ' . htmlspecialchars($row['local']) . ' | ' . htmlspecialchars($row['email']) . ' | ' . htmlspecialchars($row['contato']) . ' | ' . htmlspecialchars($row['endereco']) . 
+        ' <a href="?edit=' . $row['id'] . '" style="color:blue">Editar</a> ' 
+        . ' <a href="?delete=' . $row['id'] . '" style="color:red" onclick="return confirm(\'Confirma excluir este contato?\')">Excluir</a>';
+        echo '</li>';
     }
     ?>
     </ul>
-    <a href="home.php">Voltar ao início</a>
+    <p><a href="home.php">⬅ Voltar</a></p>
 </div>
 </body>
 </html>

@@ -48,7 +48,7 @@ if ($_POST) {
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Governo do Estado do Ceará">
+        <img src="logo.png" alt="Agenda 2025" style="display:block; margin:auto; max-width:150px;">
         <h2>Cadastro de Usuário</h2>
 
         <?php if (!empty($erro)): ?>
@@ -82,8 +82,7 @@ if ($_POST) {
         </form>
         <br>
         <a href="login.php">Já tem conta? Faça login</a>
-    </div>
-<footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
+        <footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
         <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
             <!-- Nossos Canais -->
             <div style="flex:1; min-width:250px;">
@@ -106,5 +105,6 @@ if ($_POST) {
             </div>
             <p style="margin-top:30px; font-size:14px;">&copy; João Mesquita 2025 - Todos os direitos reservados.</p>
     </footer>
+    </div>
 </body>
 </html>

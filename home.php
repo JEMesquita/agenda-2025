@@ -72,42 +72,42 @@ if (!isset($_SESSION['usuario_id'])) {
             <a href="add_pcce.php" class="menu-item">🕵️‍♂️ PCCE</a>
             <a href="add_pmce.php" class="menu-item">👮‍♂️ PMCE</a>
             <a href="add_pefoce.php" class="menu-item">🔍 PEFOCE</a>
-            <a href="add_sap.php" class="menu-item">🔒 SAP</a>      
+            <a href="add_sap.php" class="menu-item">🔒 SAP</a>
             <a href="add_outras.php" class="menu-item">🏢 Outras Instituições</a>
             <a href="add_juizado.php" class="menu-item">⚖️ Juizados Especiais</a>
-            
-            
+
+
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
             <a href="dashboard.php" style="margin-right: 20px; color: #006400; text-decoration: none;">📋 Ver Agenda Completa</a>
             <a href="logout.php" style="color: #cc0000; text-decoration: none;">🚪 Sair</a>
         </div>
+
+        <footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
+            <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
+                <!-- Nossos Canais -->
+                <div style="flex:1; min-width:250px;">
+                    <h3>Desenvimento e Manutenções</h3>
+                    <p><a href="mailto:contato@gmail.com">esmerinomesquita@gmail.com.br</a></p>
+                    <p><a href="https://github.com/JEMesquita/joao.mesquita.github.io" target="_blank">Site Oficial</a></p>
+                    <!-- Adicione mais links se necessário -->
+                </div>
+                <!-- Horário de Atendimento -->
+                <div style="flex:1; min-width:250px;">
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 08h - 18h
+                        Sábado e Domingo: Fechado</p>
+                </div>
+
+                <!-- Informações de Contato -->
+                <div style="flex: 1; min-width:250px;">
+                    <h3>Contato</h3>
+                    <p>Telefone.:(85) 99661-3303</p>
+                </div>
+                <p style="margin-top:30px; font-size:14px;">&copy; João Mesquita 2025 - Todos os direitos reservados.</p>
+        </footer>
     </div>
-
-    <footer style="text-align:center; padding:20px; background-color:#f1f1f1; margin-top:40px;">
-        <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1000px; margin:auto;">
-            <!-- Nossos Canais -->
-            <div style="flex:1; min-width:250px;">
-                <h3>Desenvimento e Manutenções</h3>
-                <p><a href="mailto:contato@gmail.com">esmerinomesquita@gmail.com.br</a></p>
-                <p><a href="https://github.com/JEMesquita/joao.mesquita.github.io" target="_blank">Site Oficial</a></p>
-                <!-- Adicione mais links se necessário -->
-            </div>
-            <!-- Horário de Atendimento -->
-            <div style="flex:1; min-width:250px;">
-                <h3>Horário de Atendimento</h3>
-                <p>Segunda a Sexta: 08h - 18h
-                    Sábado e Domingo: Fechado</p>
-            </div>
-
-            <!-- Informações de Contato -->
-            <div style="flex: 1; min-width:250px;">
-                <h3>Contato</h3>
-                <p>Telefone.:(85) 99661-3303</p>
-            </div>
-            <p style="margin-top:30px; font-size:14px;">&copy; João Mesquita 2025 - Todos os direitos reservados.</p>
-    </footer>
 </body>
 
 </html>
